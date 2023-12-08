@@ -9,6 +9,8 @@ interface GameContextProps {
   board: Board;
   result: GameResult;
   addMove: (row: number, col: number) => void;
+  restart: () => void;
+  clear: () => void;
 }
 
 const GameContext = createContext<GameContextProps>({} as any);
@@ -20,6 +22,14 @@ export function GameProvider(props: any) {
     setGame(game.addMove(row, col));
   }
 
+  function restart() {
+    setGame(game.nextRound());
+  }
+
+  function clear() {
+    setGame(game.clear());
+  }
+
   return (
     <GameContext.Provider
       value={{
@@ -29,6 +39,8 @@ export function GameProvider(props: any) {
         board: game.board,
         addMove,
         result: game.result,
+        restart,
+        clear,
       }}
     >
       {props.children}
