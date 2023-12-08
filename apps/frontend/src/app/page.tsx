@@ -1,16 +1,14 @@
-'use client';
-import Button from '@/components/shared/Button';
-import Card from '@/components/shared/Card';
-import Modal from '@/components/shared/Modal';
+import CellArea from '@/components/game/CellArea';
+import { PlayerType } from 'core';
 
 export default function Home() {
   return (
     <div>
-      <Card color='primary'> Estou dentro de um card </Card>
-
-      <Modal visible={false}> Estou dentro do modal</Modal>
-
-      <Button onClick={() => console.log('Clicou')}>Clique aqui!</Button>
+      <CellArea type={PlayerType.O} highlighted />
+      <CellArea type={PlayerType.X} highlighted />
+      <CellArea type={PlayerType.O} />
+      <CellArea type={PlayerType.X} />
+      <CellArea />
     </div>
   );
 }
