@@ -3,6 +3,9 @@ import { Board, Game, GameResult, Player, PlayerType } from 'core';
 import { createContext, useState } from 'react';
 
 interface GameContextProps {
+  player1: Player;
+  player2: Player;
+  ties: number;
   board: Board;
   result: GameResult;
   addMove: (row: number, col: number) => void;
@@ -18,7 +21,16 @@ export function GameProvider(props: any) {
   }
 
   return (
-    <GameContext.Provider value={{ board: game.board, addMove, result: game.result }}>
+    <GameContext.Provider
+      value={{
+        player1: game.player1,
+        player2: game.player2,
+        ties: game.ties,
+        board: game.board,
+        addMove,
+        result: game.result,
+      }}
+    >
       {props.children}
     </GameContext.Provider>
   );

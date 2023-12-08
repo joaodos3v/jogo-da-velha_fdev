@@ -1,6 +1,8 @@
+export type CardColor = 'primary' | 'secondary' | 'light' | 'dark';
+
 export interface CardProps {
   children?: React.ReactNode;
-  color?: 'primary' | 'secondary' | 'light' | 'dark';
+  color?: CardColor;
   noBorder?: boolean;
   hover?: boolean;
 }
