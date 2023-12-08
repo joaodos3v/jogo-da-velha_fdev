@@ -12,7 +12,7 @@ export default function Result() {
   return (
     <Modal visible={result.finished}>
       {result.tied ? (
-        <span className='uppercase font-bold text-light'>Terminou empatado</span>
+        <span className='uppercase font-bold text-light text-3xl mb-4'>Terminou empatado</span>
       ) : (
         <>
           <span className='uppercase font-bold text-light'>

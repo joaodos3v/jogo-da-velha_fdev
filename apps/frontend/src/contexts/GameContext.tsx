@@ -5,6 +5,7 @@ import { createContext, useState } from 'react';
 interface GameContextProps {
   player1: Player;
   player2: Player;
+  currentPlayer: Player;
   ties: number;
   board: Board;
   result: GameResult;
@@ -35,6 +36,7 @@ export function GameProvider(props: any) {
       value={{
         player1: game.player1,
         player2: game.player2,
+        currentPlayer: game.currentPlayer,
         ties: game.ties,
         board: game.board,
         addMove,
